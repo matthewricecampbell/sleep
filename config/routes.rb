@@ -2,7 +2,9 @@ Sleep::Application.routes.draw do
   devise_for :users
 
 
+  resources :sleep_times
 
+  match 'home/form' => 'home#index'
 
   get "home/index"
 
