@@ -1,0 +1,9 @@
+<%= form_for @sleep_time do |f| %>
+	<% if @sleep_time.start_time.present? %>
+		<%= f.hidden_field :end_time , :value => (@sleep_time.end_time || Time.now) %>
+	<% else %>
+		<%= f.hidden_field :start_time , :value => (@sleep_time.start_time || Time.now) %>
+	<% end %>
+	
+	<%= f.submit (@sleep_time.start_time.present? ? "I'm Awake" : "I'm going to sleep") %>
+<% end %>

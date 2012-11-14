@@ -1,0 +1,6 @@
+<%- if user_signed_in? %>
+	<%= render 'sleep_times/form' %>
+	<%- if @sleep_time.sleep_duration != nil %>
+		<h2>You just slept:</h2><%= @sleep_time.sleep_duration %><h2>hours</h2>
+	<%- end %>
+<%- end %>
