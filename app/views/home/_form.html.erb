@@ -1,9 +1,0 @@
-<%= form_for @sleep_time do |f| %>
-	<%= f.hidden_field :start_time , :value => Time.now %>
-	<%= f.submit "I'm Going To Sleep" %>
-<% end %>
-<%= form_for @sleep_time do |f| %>
-	<%= f.hidden_field :end_time , :value => Time.now %>
-	<%= f.submit "I'm Awake" %>
-<% end %>
-

@@ -18,9 +18,6 @@
       <%- end %>
     </ul>
 	</header>
-	<%- if user_signed_in? %>
-		<%= render 'home/form' %>
-	<%- end %>
 		<%= yield %>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
