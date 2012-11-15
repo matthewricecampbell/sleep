@@ -4,6 +4,5 @@
 	<% else %>
 		<%= f.hidden_field :start_time , :value => (@sleep_time.start_time || Time.now) %>
 	<% end %>
-	
-	<%= f.submit (@sleep_time.start_time.present? ? "I'm Awake" : "I'm going to sleep") %>
+	<%= f.submit (@sleep_time.start_time.present? ? "I'm Awake" : "I'm Going To Sleep") %>
 <% end %>
