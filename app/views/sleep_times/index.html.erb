@@ -1,6 +1,6 @@
 <%- if user_signed_in? %>
 	<%= render 'sleep_times/form' %>
-	<%- if @completed_sleep_time.sleep_duration != nil %>
-		<h2>You just slept:</h2><%= @completed_sleep_time.sleep_duration %><h2>hours</h2>
+	<%- if @completed_sleep_time && @completed_sleep_time.sleep_duration != nil %>
+		<h2>You Just Slept:</h2><%= @completed_sleep_time.sleep_duration %><h2>Hours</h2>
 	<%- end %>
 <%- end %>
