@@ -7,7 +7,9 @@ class SleepTime < ActiveRecord::Base
   		return nil
   	end
   	sleep_seconds = self.end_time - self.start_time
-  	sleep_seconds.round(0)
+  	time = sleep_seconds.round(0)
+    Time.at(time).gmtime.strftime('%R:%S')
+
   end
 end
 

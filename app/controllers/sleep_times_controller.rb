@@ -5,7 +5,8 @@ class SleepTimesController < ApplicationController
   end
   
   def create
-    @sleep_time = SleepTime.new(params[:sleep_time])
+    @sleep_time = SleepTime.new #SleepTime.new(params[:sleep_time])
+    @sleep_time.start_time = Time.new
     @sleep_time.user = current_user
   	@sleep_time.save
   	redirect_to :root

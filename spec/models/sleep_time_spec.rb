@@ -5,7 +5,7 @@ describe SleepTime do
 		context "if there is a start_time and end_time" do
 			it "should properly calculate sleep_duration" do
 				sleep_time = SleepTime.new(:start_time => Time.now, :end_time => Time.now + 1.hour)
-				sleep_time.sleep_duration.should == 1.hour
+				sleep_time.sleep_duration.should == "01:00:00"
 			end
 		end
 		context "if there is no start_time" do
