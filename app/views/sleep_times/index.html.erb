@@ -1,4 +1,5 @@
 <%- if user_signed_in? %>
+	<img src="/assets/vu_meter.optimized.apng.png" />
 	<%= render 'sleep_times/form' %>
 	<%- if @completed_sleep_time && @completed_sleep_time.sleep_duration != nil %>
 		<h2>Sleep Time: <%= @completed_sleep_time.sleep_duration %></h2>
