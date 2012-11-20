@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 gem 'devise'
 gem 'timecop'
 gem 'bootstrap-sass'
+gem 'whenever', :require => false
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
