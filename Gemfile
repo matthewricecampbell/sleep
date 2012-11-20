@@ -7,8 +7,8 @@ gem 'bootstrap-sass'
 gem 'whenever', :require => false
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'pg'
 
-gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -29,6 +29,7 @@ gem 'jquery-rails'
 group :test, :development do
   gem 'fabrication'
   gem 'rspec-rails'
+  gem 'sqlite3'
 end
 
 group :test do
