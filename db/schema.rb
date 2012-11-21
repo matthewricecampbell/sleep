@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121115163003) do
+ActiveRecord::Schema.define(:version => 20121121193239) do
 
   create_table "sleep_times", :force => true do |t|
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "user_id"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
