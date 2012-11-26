@@ -3,5 +3,6 @@
 	<%= render 'sleep_times/form' %>
 	<%- if @completed_sleep_time && @completed_sleep_time.sleep_duration != nil %>
 		<h2>Sleep Time: <%= @completed_sleep_time.sleep_duration %></h2>
+		<h2>You've slept a total of: <%= Time.at(current_user.sleep_times.sum(:duration)).gmtime.strftime('%R:%S') %> hours since you started using Sleep Meter!</h2>
 	<%- end %>
 <%- end %>

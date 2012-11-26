@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121193239) do
+ActiveRecord::Schema.define(:version => 20121125231745) do
 
   create_table "sleep_times", :force => true do |t|
     t.datetime "start_time"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20121121193239) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
+    t.integer  "duration"
   end
 
   create_table "users", :force => true do |t|

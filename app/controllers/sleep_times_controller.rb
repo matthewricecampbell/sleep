@@ -13,8 +13,10 @@ before_filter :authenticate_user!
   end
 
   def update
+    @completed_sleep_time = current_user.sleep_times.last
     @sleep_time = SleepTime.last
     if @sleep_time.end_time = Time.new
+      @sleep_time.duration = @sleep_time.end_time - @sleep_time.start_time
       @sleep_time.save!
       redirect_to :root
     end
@@ -26,14 +28,6 @@ before_filter :authenticate_user!
   	if @sleep_time.nil? || @sleep_time.end_time != nil
   	   @sleep_time = SleepTime.new
     end
-  end
-
-  def sleep_duration_total
-     @sleep_duration_total = @completed_sleep_time.sleep_duration.last + @completed_sleep_time.sleep_duration
-  end
-
-  def healthy_sleep_time_tracker
-    healthy_sleep_time + 8
   end
 
 end
