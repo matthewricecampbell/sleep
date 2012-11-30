@@ -1,5 +1,5 @@
 <%= form_for @sleep_time do |f| %>
-	<%= f.submit (@sleep_time.start_time.present? ? "I'm Awake" : "I'm Going To Sleep") %>
+	<%= f.submit (@sleep_time.start_time.present? ? "I'm Awake" : "I'm Going To Sleep"), :class => "btn btn-success"  %>
 <% end %>
 
 

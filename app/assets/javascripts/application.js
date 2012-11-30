@@ -11,6 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.easing.1.3
 //= require jquery_ujs
 //= require bootstrap
+//= require justgage.1.0.1.min
+//= require raphael.2.1.0.min
 //= require_tree .

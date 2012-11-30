@@ -37,7 +37,9 @@ Feature: User tracks sleep
 		And that 8 hours have passed
 		And I click "I'm Awake"
 		Then I should see "Sleep Time: 08:00:00"
-		And I should see "You've slept a total of: 16:00:00 hours since you started using Sleep Meter!"
+		And I should see "Actual Total: 16:00:00"
+
+
 
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Sleep Meter" %></title>
     <meta name="description" content="">
@@ -10,6 +10,25 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
+    <script>
+      var g1;
+        window.onload = function(){
+        var g1 = new JustGage({
+          id: "g1", 
+          value: 
+          <%- if user_signed_in? %>
+            <%=((current_user.sleep_times.sum(:duration)/3600)- (current_user.expected_hours)).to_i%>, 
+          <%- else %>
+            0,
+          <%- end %>
+          min: -100,
+          max: 100,
+          title: " ",
+          levelColorsGradient: true,
+          label: "Debt/Surplus"
+        });
+      };
+    </script>
 </head>
 <body>
     <header class="navbar navbar-fixed-top">
@@ -19,11 +38,11 @@
             <%- if user_signed_in? %>
               <li class="active"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <%- else %>
-              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+              <li id="sign_up_in"><%= link_to "Sign Up", new_user_registration_path %></li>
               <li><%= link_to "Sign In", new_user_session_path %></li>
             <%- end %>
           </ul>
-          <h3 class="muted">Sleep Meter</h3>
+          <h3 id="nav_title">Sleep Meter</h3>
         </div>
       </nav>
     </header>
@@ -36,8 +55,9 @@
                   <%= yield %>
               <%- else %>
                   <div class="jumbotron">
-                    <h1>Sleep Meter</h1>
-                    <img src="/assets/vu_meter.optimized.apng.png" />
+                    <h1 id="title">Sleep-Meter</h1>
+                    <h4 id="slogan" class="muted">Not too much not too little.<br> Get them 8 hours sleep to keep your meter in the middle.</h4>
+                    <div id="g1"></div>
                     <p class="lead">Sleep Meter tracks your sleep time and is here to keep you healthy!</p>
                     <a class="btn btn-large btn-success" <%= link_to "Sign Up", new_user_registration_path %></a>
                     <%= yield %>
