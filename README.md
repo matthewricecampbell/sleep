@@ -9,3 +9,7 @@ Project Overview:
 LIST OF FEATURES:
 	
 	*SLEEP METER
+
+Demo:
+
+	http://sleepmeter.herokuapp.com/
